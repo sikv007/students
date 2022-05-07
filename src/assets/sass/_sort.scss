@@ -1,0 +1,15 @@
+.student-sort {
+  .sort-order {
+    @include foxtrot;
+    color: $grey;
+    cursor: pointer;
+    
+    &--selected {
+      color: $primary;
+    }
+  }
+  select {
+    border-radius: $border-radius-large;
+    color: $dark;
+  }
+}

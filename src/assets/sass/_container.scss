@@ -1,0 +1,40 @@
+.container {
+  width: 28.8rem;
+  margin: auto;
+}
+
+@include mobile-medium {
+  .container {
+    width: 44.8rem;
+  }
+}
+
+@include tablet-small {
+  .container {
+    width: 73.6rem;
+  }
+}
+
+@include tablet-medium {
+  .container {
+    width: 99.2rem;
+  }
+}
+
+@include laptop-small {
+  .container {
+    width: 124.8rem;
+  }
+}
+
+@include laptop-medium {
+  .container {
+    width: 133.4rem;
+  }
+}
+
+@include desktop {
+  .container {
+    width: 188.8rem;
+  }
+}

@@ -1,0 +1,15 @@
+.btn {
+  cursor: pointer;
+  background-color: $grey;
+  border: 0;
+
+  &--cta {
+    background: $primary;
+    color: $light;
+  }
+
+  &--small {
+    padding: $_XS $_S;
+    @include alfa;
+  }
+}

@@ -1,16 +1,16 @@
-import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
+import Container from '../UI/Container';
 import StudentItem from './StudentItem';
 
 const StudentList = () => {
   const students = useSelector((state) => state.students);
 
   return (
-    <Fragment>
+    <Container className="grid">
       {students.map((student, i) => (
         <StudentItem student={student} key={i} id={i} />
       ))}
-    </Fragment>
+    </Container>
   );
 };
 export default StudentList;

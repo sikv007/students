@@ -1,0 +1,12 @@
+.student-details {
+  padding: $_XL;
+  display: flex;
+  gap: $_L;
+  flex-wrap: wrap;
+
+  &__image {
+    img {
+      width: 4.4rem;
+    }
+  }
+}

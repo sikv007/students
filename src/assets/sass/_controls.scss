@@ -1,0 +1,13 @@
+.student-controls {
+  padding: $_M;
+  margin-bottom: $_XL;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  section {
+    display: flex;
+    align-items: center;
+    gap: $_S;
+  }
+}

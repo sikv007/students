@@ -7,8 +7,10 @@ const App = () => {
   return (
     <Fragment>
       <Header />
-      <StudentControls />
-      <StudentList />
+      <main className='main'>
+        <StudentControls />
+        <StudentList />
+      </main>
     </Fragment>
   );
 };

@@ -1,0 +1,22 @@
+.student-item {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $_M;
+  gap: $_S;
+
+  &__image {
+    width: $_2XL;
+  }
+
+  &__text {
+    h3 {
+      margin-bottom: $_XS;
+    }
+  }
+
+  &__actions {
+    width: 100%;
+    display: flex;
+    gap: $_S;
+  }
+}

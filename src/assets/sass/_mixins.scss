@@ -1,5 +1,4 @@
 // Font
-
 @mixin alfa {
   font-size: 1.4rem;
   line-height: 2rem;
@@ -58,4 +57,46 @@
 @mixin kilo {
   font-size: 5.4rem;
   line-height: 6rem;
+}
+
+// media queries
+@mixin mobile-medium {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet-small {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-medium {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin laptop-small {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin laptop-medium {
+  @media screen and (min-width: 1366px) {
+    @content;
+  }
+}
+@mixin laptop-medium {
+  @media screen and (min-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
 }

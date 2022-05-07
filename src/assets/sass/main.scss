@@ -1,6 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
 @import 'mixins';
 @import 'variables';
+@import 'container';
+@import 'button';
+@import 'card';
+@import 'controls';
+@import 'sort';
+@import 'item';
+@import 'grid';
+@import 'image';
+@import 'header';
+@import 'details';
 
 * {
   margin: 0;
@@ -13,11 +23,60 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+  background: $grey;
+  color: $dark;
+}
+
+label {
+  @include alfa;
+}
+
+p,
+button,
+input,
+select {
+  @include bravo;
+}
+h6 {
+  @include charlie;
+}
+h2 {
+  @include delta;
+}
+h3 {
+  @include echo;
+}
+h2 {
+  @include foxtrot;
+}
+h1 {
+  @include golf;
+}
+
+i {
+  @include foxtrot;
+}
+
+input,
+select,
+button {
+  padding: $_S $_M;
+  border-radius: $border-radius-small;
+}
+
+select,
+input {
+  border: 1px solid $grey;
+}
+
+.main {
+  padding-bottom: $_3XL;
 }
 
 .overlay {
   position: fixed;
+  overflow: hidden;
   background: rgba(0, 0, 0, 0.9);
   width: 100vw;
   height: 100vh;
@@ -28,7 +87,6 @@ body {
   &-content {
     overflow: hidden;
     position: fixed;
-    width: 60vw;
     transform: translate(-50%, -50%);
     height: auto;
     top: 50%;

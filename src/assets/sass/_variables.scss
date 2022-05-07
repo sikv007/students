@@ -2,8 +2,8 @@ $primary: #32007d;
 $primary-shade: #231932;
 $primary-tint: #c8afff;
 $dark: #0c1222;
-$light: #cbced5;
-$grey: #979caa;
+$light: #f5f5f7;
+$grey: #cbced5;
 
 $_3XS: 0.2rem;
 $_2XS: 0.4rem;
@@ -14,3 +14,8 @@ $_L: 3.2rem;
 $_XL: 4.8rem;
 $_2XL: 6.4rem;
 $_3XL: 12.8rem;
+
+$border-radius-small: $_2XS;
+$border-radius-large: $_XS;
+
+$shadow-small: $_2XS $_XS $_M rgba(0, 0, 0, 0.1);

@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { studentActions } from '../../store';
 import Button from '../UI/Button';
+import Input from '../UI/Input';
+import classes from './StudentForm.module.scss';
+import Card from '../UI/Card';
 
 const StudentForm = (props) => {
   const [form, setForm] = useState({
@@ -15,39 +18,40 @@ const StudentForm = (props) => {
 
   const dispatch = useDispatch();
 
-  const firstNameHandler = (e) => {
+  const firstNameHandler = (val) => {
     setForm((state) => {
-      return { ...state, first_name: e.target.value };
+      return { ...state, first_name: val };
     });
   };
-  const lastNameHandler = (e) => {
+  const lastNameHandler = (val) => {
     setForm((state) => {
-      return { ...state, last_name: e.target.value };
+      return { ...state, last_name: val };
     });
   };
-  const phoneHandler = (e) => {
+  const phoneHandler = (val) => {
     setForm((state) => {
-      return { ...state, phone: e.target.value };
+      return { ...state, phone: val };
     });
   };
-  const addressHandler = (e) => {
+  const addressHandler = (val) => {
     setForm((state) => {
-      return { ...state, address: e.target.value };
+      return { ...state, address: val };
     });
   };
-  const postalCodeHandler = (e) => {
+  const postalCodeHandler = (val) => {
     setForm((state) => {
-      return { ...state, postal_code: e.target.value };
+      return { ...state, postal_code: val };
     });
   };
-  const cityHandler = (e) => {
+  const cityHandler = (val) => {
     setForm((state) => {
-      return { ...state, cityHandler: e.target.value };
+      return { ...state, cityHandler: val };
     });
   };
 
   const submitFormHandler = (e) => {
     e.preventDefault();
+    console.log(form);
     dispatch(studentActions.addStudent(form));
     props.onClick();
   };
@@ -57,34 +61,19 @@ const StudentForm = (props) => {
   };
 
   return (
-    <form onSubmit={submitFormHandler}>
-      <div className='form-controller'>
-        <label htmlFor='firstName'>Fornavn</label>
-        <input onChange={firstNameHandler} type='text' id='firstName' />
-      </div>
-      <div className='form-controller'>
-        <label htmlFor='lastName'>Etternavn</label>
-        <input onChange={lastNameHandler} type='text' id='lastName' />
-      </div>
-      <div className='form-controller'>
-        <label htmlFor='phone'>Telefonnummer</label>
-        <input onChange={phoneHandler} type='text' id='phone' />
-      </div>
-      <div className='form-controller'>
-        <label htmlFor='address'>Adresse</label>
-        <input onChange={addressHandler} type='text' id='address' />
-      </div>
-      <div className='form-controller'>
-        <label htmlFor='postalCode'>Poststed</label>
-        <input onChange={postalCodeHandler} type='text' id='postalCode' />
-      </div>
-      <div className='form-controller'>
-        <label htmlFor='city'>By</label>
-        <input onChange={cityHandler} type='text' id='city' />
-      </div>
-      <Button title='Legg til student' type='submit' />
-      <Button title='Avbryt' type='button' onClick={cancelFormHandler} />
-    </form>
+    <Card>
+      <form onSubmit={submitFormHandler} className={classes['student-form']}>
+        <h2>Legg til student</h2>
+        <Input id='firstName' label='Fornavn' onChange={firstNameHandler} />
+        <Input id='lastName' label='Etternavn' onChange={lastNameHandler} />
+        <Input id='phone' label='Telefon' onChange={phoneHandler} />
+        <Input id='address' label='Adresse' onChange={addressHandler} />
+        <Input id='postalCode' label='Poststed' onChange={postalCodeHandler} />
+        <Input id='city' label='By' onChange={cityHandler} />
+        <Button title='Legg til student' mode="cta" type='submit' />
+        <Button title='Avbryt' type='button' onClick={cancelFormHandler} />
+      </form>
+    </Card>
   );
 };
 export default StudentForm;
