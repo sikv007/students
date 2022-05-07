@@ -3,9 +3,9 @@ const StudentItem = (props) => {
 
   return (
     <article>
-      <h2>
+      <h3>
         {first_name} {last_name}
-      </h2>
+      </h3>
     </article>
   );
 };
