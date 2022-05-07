@@ -5,6 +5,7 @@ import StudentDetails from './StudentDetails';
 import Modal from '../UI/Modal';
 import { useState } from 'react';
 import StudentImage from './StudentImage';
+import classes from './StudentItem.module.scss';
 
 const StudentItem = (props) => {
   const { first_name, last_name, postal_code, address } = props.student;
@@ -27,15 +28,19 @@ const StudentItem = (props) => {
           <StudentDetails student={props.student} />
         </Modal>
       )}
-      <article>
-        <StudentImage alt={first_name} />
-        <h3>
-          {first_name} {last_name}
-        </h3>
-        <p>{address}</p>
-        <p>{postal_code}</p>
-        <Button title='Se Detaljer' onClick={toggleDetailsHandler}></Button>
-        <Button title='Slett' onClick={removeStudentHandler} />
+      <article className={classes['student-item']}>
+        <div className={classes['student-item__image']}>
+          <StudentImage alt={first_name} />
+        </div>
+        <div className={classes['student-item__text']}>
+          <h3>
+            {first_name} {last_name}
+          </h3>
+          <p>{address}</p>
+          <p>{postal_code}</p>
+          <Button title='Se Detaljer' onClick={toggleDetailsHandler}></Button>
+          <Button title='Slett' onClick={removeStudentHandler} />
+        </div>
       </article>
     </>
   );
