@@ -1,27 +1,35 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { studentActions } from '../../store';
 
 const StudentSort = () => {
-  const [sort, setSort] = useState('a-å');
+  const [sort, setSort] = useState('first');
+  const [order, setOrder] = useState(true);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(studentActions.sortStudents(sort));
-  }, [sort, dispatch]);
+    dispatch(studentActions.sortStudents({ sort, order: order ? "asc" : "desc" }));
+  }, [sort, dispatch, order]);
 
   const sortHandler = (e) => {
     setSort(e.target.value);
   };
 
+  const orderHandler = (e) => {
+    setOrder(e.target.checked);
+  };
+
   return (
-    <select onChange={sortHandler}>
-      <option value='first_asc'>Fornavn (A-Å)</option>
-      <option value='last_desc'>Fornavn (Å-A)</option>
-      <option value='last_asc'>Etternavn (Å-A)</option>
-      <option value='last_desc'>Etternavn (Å-A)</option>
-    </select>
+    <Fragment>
+      <select onChange={sortHandler}>
+        <option value='first'>Fornavn</option>
+        <option value='last'>Etternavn</option>
+        <option value='address'>Adresse</option>
+        <option value='postal'>Poststed</option>
+      </select>
+      <input onChange={orderHandler} checked={order} type='checkbox'></input>
+    </Fragment>
   );
 };
 export default StudentSort;
