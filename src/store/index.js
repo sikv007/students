@@ -33,6 +33,9 @@ const studentSlice = createSlice({
         state.students.sort((a, b) => +b.postal_code - +a.postal_code);
       }
     },
+    addStudent(state, action) {
+      state.students.push(action.payload);
+    },
   },
 });
 
