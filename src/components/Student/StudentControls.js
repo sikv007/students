@@ -14,11 +14,17 @@ const StudentControls = () => {
     dispatch(studentActions.emptyStudentList());
   };
 
-  const addStudentHandler = () => setModalIsVisible((state) => !state);
+  const addStudentHandler = () => {
+    setModalIsVisible((state) => !state);
+  };
 
   return (
     <div>
-      {modalIsVisible && <Modal onClick={addStudentHandler}><StudentForm onClick={addStudentHandler} /></Modal>}
+      {modalIsVisible && (
+        <Modal onClick={addStudentHandler}>
+          <StudentForm onClick={addStudentHandler} />
+        </Modal>
+      )}
       <StudentSort />
       <Button title='Legg til student' onClick={addStudentHandler} />
       <Button title='Tøm listen' onClick={emptyStudentsHandler} />

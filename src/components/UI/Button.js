@@ -1,5 +1,6 @@
 const Button = (props) => {
   const clickHandler = () => {
+    if (!props.onClick) return;
     props.onClick();
   };
 
