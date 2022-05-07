@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { studentActions } from '../../store';
 import Button from '../UI/Button';
+import StudentSort from './StudentSort';
 
 const StudentControls = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const StudentControls = () => {
 
   return (
     <div>
+      <StudentSort />
       <Button title='Tøm listen' onClick={emptyStudentsHandler} />
     </div>
   );
