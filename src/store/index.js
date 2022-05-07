@@ -10,6 +10,9 @@ const studentSlice = createSlice({
     removeStudent(state, action) {
       state.students.splice(action.payload, 1);
     },
+    emptyStudentList(state) {
+      state.students = [];
+    },
   },
 });
 
