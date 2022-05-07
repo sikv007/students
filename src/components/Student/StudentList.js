@@ -8,7 +8,7 @@ const StudentList = () => {
   return (
     <Fragment>
       {students.map((student, i) => (
-        <StudentItem student={student} key={i} />
+        <StudentItem student={student} key={i} id={i} />
       ))}
     </Fragment>
   );

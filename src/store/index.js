@@ -6,7 +6,11 @@ const initialState = { students: [...DUMMY_DATA] };
 const studentSlice = createSlice({
   name: 'student',
   initialState,
-  reducers: {},
+  reducers: {
+    removeStudent(state, action) {
+      state.students.splice(action.payload, 1);
+    },
+  },
 });
 
 export const studentActions = studentSlice.actions;
