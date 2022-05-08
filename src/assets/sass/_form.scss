@@ -1,0 +1,72 @@
+.student-form {
+  padding: $_XL $_2XL;
+  width: 90vw;
+  height: 90vh;
+  overflow: scroll;
+
+  h2 {
+    margin-bottom: $_L;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: $_L;
+    gap: $_L;
+  }
+
+  &__actions {
+    margin-top: $_XL;
+    display: flex;
+    gap: $_S;
+  }
+
+  .form-control {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: $_XS;
+
+    input {
+      width: 100%;
+    }
+
+    label {
+      width: 100%;
+    }
+  }
+}
+
+@include mobile-medium {
+  .student-form {
+    &__row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@include tablet-medium {
+  .student-form {
+    width: 60vw;
+    height: auto;
+
+    &__row {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .form-control {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: $_XS;
+
+      input {
+        width: 100%;
+      }
+
+      label {
+        width: 100%;
+      }
+    }
+  }
+}

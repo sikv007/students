@@ -2,6 +2,8 @@
   padding: $_M;
   margin-bottom: $_XL;
   display: flex;
+  flex-wrap: wrap;
+  gap: $_M;
   justify-content: space-between;
   align-items: center;
 
@@ -9,5 +11,21 @@
     display: flex;
     align-items: center;
     gap: $_S;
+  }
+}
+
+@include tablet-medium {
+  .student-controls {
+    padding: $_M;
+    margin-bottom: $_XL;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    section {
+      display: flex;
+      align-items: center;
+      gap: $_S;
+    }
   }
 }

@@ -1,7 +1,7 @@
 .student-sort {
   .sort-order {
     @include foxtrot;
-    color: $grey;
+    color: $grey-darken;
     cursor: pointer;
     
     &--selected {

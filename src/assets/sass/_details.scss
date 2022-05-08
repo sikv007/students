@@ -1,12 +1,41 @@
 .student-details {
   padding: $_XL;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: $_L;
   flex-wrap: wrap;
 
   &__image {
-    img {
-      width: 4.4rem;
+    width: calc($_XL + $_XL);
+    height: calc($_XL + $_XL);
+  }
+
+  &__text {
+    width: calc($_2XL + $_2XL);
+    h2 {
+      margin-bottom: $_S;
     }
+
+    &__actions {
+      margin-top: $_S;
+    }
+  }
+
+  &__actions {
+    width: 100%;
+  }
+}
+
+@include tablet-medium {
+  .student-details {
+    &__text {
+      width: calc($_3XL + $_3XL);
+    }
+
+    &__image {
+      width: calc($_3XL + $_3XL);
+      height: calc($_3XL + $_3XL);
+    }
+    grid-template-columns: 1fr 1fr;
   }
 }

@@ -8,15 +8,16 @@ import StudentForm from './StudentFrom';
 import Card from '../UI/Card';
 import Container from '../UI/Container';
 
-
 const StudentControls = () => {
   const dispatch = useDispatch();
   const [modalIsVisible, setModalIsVisible] = useState(false);
 
+  // Tøm listen med elever
   const emptyStudentsHandler = () => {
     dispatch(studentActions.emptyStudentList());
   };
 
+  // Vis modal vindu
   const addStudentHandler = () => {
     setModalIsVisible((state) => !state);
   };
@@ -29,11 +30,11 @@ const StudentControls = () => {
         </Modal>
       )}
       <Container>
-        <Card className="student-controls">
+        <Card className='student-controls'>
           <StudentSort />
           <section>
             <Button
-              title='Legg til student'
+              title='Legg til elev'
               mode='cta'
               onClick={addStudentHandler}
             />

@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { studentActions } from '../../store';
 import Button from '../UI/Button';
 import Input from '../UI/Input';
-import classes from './StudentForm.module.scss';
 import Card from '../UI/Card';
 
 const StudentForm = (props) => {
@@ -51,7 +50,6 @@ const StudentForm = (props) => {
 
   const submitFormHandler = (e) => {
     e.preventDefault();
-    console.log(form);
     dispatch(studentActions.addStudent(form));
     props.onClick();
   };
@@ -61,17 +59,50 @@ const StudentForm = (props) => {
   };
 
   return (
-    <Card>
-      <form onSubmit={submitFormHandler} className={classes['student-form']}>
+    <Card className='student-form'>
+      <form onSubmit={submitFormHandler}>
         <h2>Legg til student</h2>
-        <Input id='firstName' label='Fornavn' onChange={firstNameHandler} />
-        <Input id='lastName' label='Etternavn' onChange={lastNameHandler} />
-        <Input id='phone' label='Telefon' onChange={phoneHandler} />
-        <Input id='address' label='Adresse' onChange={addressHandler} />
-        <Input id='postalCode' label='Poststed' onChange={postalCodeHandler} />
-        <Input id='city' label='By' onChange={cityHandler} />
-        <Button title='Legg til student' mode="cta" type='submit' />
-        <Button title='Avbryt' type='button' onClick={cancelFormHandler} />
+        <div className='student-form__row'>
+          <Input
+            id='firstName'
+            label='Fornavn'
+            onChange={firstNameHandler}
+            required={true}
+          />
+          <Input
+            id='lastName'
+            label='Etternavn'
+            onChange={lastNameHandler}
+            required={true}
+          />
+        </div>
+        <div className='student-form__row'>
+          <Input
+            id='phone'
+            label='Telefon'
+            onChange={phoneHandler}
+            required={true}
+          />
+          <Input
+            id='address'
+            label='Adresse'
+            onChange={addressHandler}
+            required={true}
+          />
+        </div>
+        <div className='student-form__row'>
+          <Input
+            id='postalCode'
+            label='Poststed'
+            onChange={postalCodeHandler}
+            required={true}
+          />
+          <Input id='city' label='By' onChange={cityHandler} required={true} />
+        </div>
+        <div className='student-form__actions'>
+          <Button title='Legg til student' mode='cta' type='submit' />
+          <Button title='Avbryt' type='button' onClick={cancelFormHandler} />
+        </div>
       </form>
     </Card>
   );

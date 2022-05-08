@@ -25,7 +25,7 @@ const StudentItem = (props) => {
     <>
       {modalIsVisible && (
         <Modal onClick={toggleDetailsHandler}>
-          <StudentDetails student={props.student} />
+          <StudentDetails student={props.student} onClick={toggleDetailsHandler} />
         </Modal>
       )}
       <Card className='student-item'>

@@ -7,6 +7,7 @@ const StudentList = () => {
 
   return (
     <Container className="grid">
+      {students.length === 0 && <h2>Ingen elever å vise</h2>}
       {students.map((student, i) => (
         <StudentItem student={student} key={i} id={i} />
       ))}

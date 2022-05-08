@@ -1,11 +1,12 @@
 .student-item {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   padding: $_M;
+  grid-template-columns: 1fr 4fr;
   gap: $_S;
 
   &__image {
     width: $_2XL;
+    height: $_2XL;
   }
 
   &__text {
@@ -16,6 +17,7 @@
 
   &__actions {
     width: 100%;
+    grid-column: span 2;
     display: flex;
     gap: $_S;
   }

@@ -4,7 +4,7 @@ import { studentActions } from '../../store';
 
 const StudentSort = () => {
   const [sort, setSort] = useState('first');
-  const [order, setOrder] = useState(true);
+  const [order, setOrder] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -26,11 +26,10 @@ const StudentSort = () => {
     setOrder(false);
   };
 
-
   return (
     <section className='student-sort'>
-      <label htmlFor="sort">Sorter</label>
-      <select onChange={sortHandler} id="sort">
+      <label htmlFor='sort'>Sorter</label>
+      <select onChange={sortHandler} id='sort'>
         <option value='first'>Fornavn</option>
         <option value='last'>Etternavn</option>
         <option value='address'>Adresse</option>
@@ -39,15 +38,15 @@ const StudentSort = () => {
       <div>
         <i
           className={`bi bi-sort-up sort-order ${
-            order ? 'sort-order--selected' : ''
-          }`}
-          onClick={setOrderDesc}
-        ></i>
-        <i
-          className={`bi bi-sort-down sort-order ${
             !order ? 'sort-order--selected' : ''
           }`}
           onClick={setOrderAsc}
+        ></i>
+        <i
+          className={`bi bi-sort-down sort-order ${
+            order ? 'sort-order--selected' : ''
+          }`}
+          onClick={setOrderDesc}
         ></i>
       </div>
     </section>

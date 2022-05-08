@@ -2,10 +2,19 @@
   cursor: pointer;
   background-color: $grey;
   border: 0;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $grey-darken;
+  }
 
   &--cta {
     background: $primary;
     color: $light;
+
+    &:hover {
+      background: $primary-darken;
+    }
   }
 
   &--small {
